@@ -130,44 +130,4 @@ cd backend && npm test
 cd frontend && npm test
 ```
 
-## 🚀 Deployment
-
-### Backend Deployment
-1. Set up MySQL database
-2. Configure environment variables
-3. Run database migrations
-4. Deploy to your preferred platform
-
-### Frontend Deployment
-1. Configure API URL for production
-2. Build the application
-3. Deploy to Vercel, Netlify, or your preferred platform
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 🛠️ Technology Stack
-
-### Frontend
-- **Next.js 15**: React framework with App Router
-- **TypeScript**: Type-safe JavaScript
-- **Tailwind CSS**: Utility-first CSS framework
-- **React Context**: State management
-- **Custom Hooks**: Reusable logic
-
-### Backend
-- **Express.js**: Node.js web framework
-- **TypeScript**: Type-safe JavaScript
-- **Prisma**: Modern database toolkit
-- **MySQL**: Relational database
-- **CORS**: Cross-origin resource sharing
-- **dotenv**: Environment variable management
-
-## 📄 License
-
 This project is licensed under the MIT License.
