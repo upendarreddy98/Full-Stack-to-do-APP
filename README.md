@@ -1,33 +1,35 @@
-# Todo App Backend
+# Full-Stack Todo Application
 
-Express.js REST API for the Todo List application with TypeScript, Prisma, and MySQL.
+A modern, full-stack Todo application with React (Next.js) frontend and Express.js backend, featuring a dark theme with rocket icon design.
 
 ## 🚀 Features
 
-- ✅ **Create Tasks**: Add new tasks with title, description, and color
-- ✏️ **Edit Tasks**: Update existing tasks
-- ✅ **Toggle Completion**: Mark tasks as completed/incomplete
-- 🗑️ **Delete Tasks**: Remove tasks with confirmation
-- 🎨 **Color Coding**: Assign colors to organize tasks
-- 📱 **Responsive Design**: Works on desktop and mobile
-- 🔄 **Real-time Updates**: Instant UI updates with optimistic updates
-- 🎯 **Modern UI**: Clean, dark theme following Figma design
+- **Modern UI**: Dark theme with gradient rocket icon design
+- **Full CRUD**: Create, read, update, and delete tasks
+- **Color Coding**: Organize tasks with color categories
+- **Real-time Updates**: Instant UI feedback and state management
+- **Type Safety**: Full TypeScript implementation across the stack
+- **Responsive Design**: Mobile-first approach with Tailwind CSS
+- **Database Integration**: MySQL with Prisma ORM
 
-## 🏗️ Architecture
+## 🛠️ Tech Stack
 
-### Frontend (Next.js)
-- **Framework**: Next.js 15 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **State Management**: React Context + useReducer
-- **API Integration**: Custom API service with error handling
+### Frontend
+- **Next.js 14** with App Router
+- **React 18** with TypeScript
+- **Tailwind CSS** for styling
+- **Context API** for state management
 
-### Backend (Express.js)
-- **Framework**: Express.js
-- **Language**: TypeScript
-- **Database**: MySQL with Prisma ORM
-- **API**: RESTful endpoints
-- **Validation**: Input validation and error handling
+### Backend
+- **Express.js** with TypeScript
+- **Prisma ORM** for database management
+- **MySQL 8.0** database
+- **CORS** enabled for frontend integration
+
+### Infrastructure
+- **Docker** for MySQL containerization
+- **RESTful API** design
+- **Environment-based** configuration
 
 ## 📁 Project Structure
 
@@ -51,35 +53,26 @@ fullstack-todo-app/
 └── README.md               # This file
 ```
 
-## 🚦 Quick Start
-
-### Prerequisites
+## 📋 Prerequisites
 
 - Node.js 18+
 - Docker Desktop
-- npm
+- npm or yarn
 
-### Platform-Specific Setup Guides
+## 🚀 Quick Start Guide
 
-- **macOS**: See [MACOS_SETUP.md](MACOS_SETUP.md) for detailed macOS instructions
-- **Windows**: Follow the standard instructions below
-- **Linux**: Follow the standard instructions with your package manager
-
-### 1. Clone the Repository
-
+### **Step 1: Clone Repository**
 ```bash
-git clone <repository-url>
-cd fullstack-todo-app
+git clone https://github.com/upendarreddy98/Full-Stack-to-do-APP.git
+cd Full-Stack-to-do-APP
 ```
 
-### 2. Start MySQL Database
-
+### **Step 2: Start MySQL Database**
 ```bash
 docker-compose up -d mysql
 ```
 
-### 3. Setup Backend
-
+### **Step 3: Setup Backend**
 ```bash
 cd backend
 npm install
@@ -87,20 +80,18 @@ npm run db:generate
 npm run db:push
 npm run dev
 ```
+Backend will be running on `http://localhost:3001`
 
-### 4. Setup Frontend (New Terminal)
-
+### **Step 4: Setup Frontend** (in new terminal)
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
+Frontend will be running on `http://localhost:3000`
 
-### 5. Access the Application
-
-- **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:3001
-- **API Health Check**: http://localhost:3001/health
+### **Step 5: Access Application**
+Open your browser and navigate to `http://localhost:3000`
 
 ## 📖 Detailed Setup Instructions
 
