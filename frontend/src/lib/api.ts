@@ -21,7 +21,7 @@ export interface UpdateTodoRequest {
   completed?: boolean;
 }
 
-class ApiError extends Error {
+export class ApiError extends Error {
   constructor(public status: number, message: string) {
     super(message);
     this.name = 'ApiError';
@@ -42,20 +42,11 @@ async function apiRequest<T>(
     ...options,
   };
 
-  console.log('API Request:', { url, config });
-
   try {
     const response = await fetch(url, config);
 
-    console.log('API Response:', {
-      status: response.status,
-      statusText: response.statusText,
-      ok: response.ok
-    });
-
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
-      console.error('API Error Data:', errorData);
       throw new ApiError(
         response.status,
         errorData.error || `HTTP ${response.status}: ${response.statusText}`
@@ -68,10 +59,8 @@ async function apiRequest<T>(
     }
 
     const data = await response.json();
-    console.log('API Success Data:', data);
     return data;
   } catch (error) {
-    console.error('API Request Error:', error);
     if (error instanceof ApiError) {
       throw error;
     }
@@ -120,5 +109,3 @@ export const todoApi = {
     return this.updateTodo(id, { completed });
   },
 };
-
-export { ApiError };

@@ -6,15 +6,15 @@ services:
     container_name: todo_mysql
     restart: unless-stopped
     environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=todo_app
-      - MYSQL_ROOT_HOST=%
+      MYSQL_ROOT_PASSWORD: upendartodo123
+      MYSQL_DATABASE: todo_app
+      MYSQL_USER: upendartodo
+      MYSQL_PASSWORD: upendartodo123
     ports:
       - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./mysql-init:/docker-entrypoint-initdb.d
-    command: --default-authentication-plugin=mysql_native_password --bind-address=0.0.0.0
+    command: --default-authentication-plugin=mysql_native_password
 
 
 

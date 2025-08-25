@@ -1,0 +1,26 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" fill="#111827" rx="6"/>
+  <defs>
+    <linearGradient id="rocketGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+    <linearGradient id="flameGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F97316" />
+      <stop offset="100%" stop-color="#EA580C" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Rocket body -->
+  <path d="M16 4L12 8V18L16 22L20 18V8L16 4Z" fill="url(#rocketGradient)" />
+  
+  <!-- Rocket flames -->
+  <path d="M14 22L12 26L14 24L16 26L18 24L20 26L18 22" fill="url(#flameGradient)" />
+  
+  <!-- Rocket window -->
+  <circle cx="16" cy="10" r="2" fill="white" />
+  
+  <!-- Side fins -->
+  <path d="M12 12L10 14L12 16" fill="url(#rocketGradient)" />
+  <path d="M20 12L22 14L20 16" fill="url(#rocketGradient)" />
+</svg>

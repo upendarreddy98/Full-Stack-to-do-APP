@@ -17,24 +17,25 @@ const colorClasses = {
   purple: 'bg-purple-500',
   pink: 'bg-pink-500',
   gray: 'bg-gray-500',
+  brown: 'bg-amber-700',
 }
 
 export function TodoItem({ todo, onToggle, onDelete }: TodoItemProps) {
-  const colorClass = todo.color && colorClasses[todo.color as keyof typeof colorClasses] 
+  const colorClass = todo.color && colorClasses[todo.color as keyof typeof colorClasses]
     ? colorClasses[todo.color as keyof typeof colorClasses]
-    : 'bg-gray-500'
+    : 'bg-blue-500'
 
   return (
-    <div className="bg-gray-800 rounded-lg p-4 flex items-center gap-3">
-      {/* Color indicator */}
-      <div className={`w-4 h-4 rounded-full ${colorClass} flex-shrink-0`}></div>
-      
+    <div className={`
+      bg-gray-800 rounded-lg p-4 flex items-center gap-3 transition-all duration-200
+      ${todo.completed ? 'opacity-60' : 'hover:bg-gray-750'}
+    `}>
       {/* Checkbox */}
       <button
         onClick={() => onToggle(todo.id, !todo.completed)}
-        className={`w-5 h-5 rounded border-2 flex-shrink-0 flex items-center justify-center transition-colors ${
-          todo.completed 
-            ? 'bg-green-500 border-green-500' 
+        className={`w-5 h-5 rounded-full border-2 flex-shrink-0 flex items-center justify-center transition-colors ${
+          todo.completed
+            ? `${colorClass} border-transparent`
             : 'border-gray-400 hover:border-gray-300'
         }`}
       >
@@ -47,11 +48,10 @@ export function TodoItem({ todo, onToggle, onDelete }: TodoItemProps) {
 
       {/* Todo content - clickable to edit */}
       <Link href={`/edit/${todo.id}`} className="flex-1 min-w-0">
-        <div className="cursor-pointer hover:bg-gray-700 rounded p-2 -m-2 transition-colors">
-          <h3 className={`font-medium truncate ${todo.completed ? 'line-through text-gray-400' : 'text-white hover:text-blue-300'}`}>
+        <div className="cursor-pointer hover:bg-gray-700 hover:bg-opacity-50 rounded p-2 -m-2 transition-colors">
+          <p className={`font-medium ${todo.completed ? 'line-through text-gray-400' : 'text-white hover:text-blue-300'}`}>
             {todo.title}
-          </h3>
-          <p className="text-xs text-gray-500 mt-1">Click to edit</p>
+          </p>
         </div>
       </Link>
 
