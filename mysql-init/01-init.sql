@@ -3,20 +3,8 @@
 -- Create database if not exists
 CREATE DATABASE IF NOT EXISTS todo_app CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
--- Create user with proper permissions for all hosts (development setup)
-CREATE USER IF NOT EXISTS 'upendartodo'@'%' IDENTIFIED BY 'upendartodo123';
-CREATE USER IF NOT EXISTS 'upendartodo'@'localhost' IDENTIFIED BY 'upendartodo123';
-CREATE USER IF NOT EXISTS 'upendartodo'@'127.0.0.1' IDENTIFIED BY 'upendartodo123';
-
--- Grant all privileges on todo_app database
-GRANT ALL PRIVILEGES ON todo_app.* TO 'upendartodo'@'%';
-GRANT ALL PRIVILEGES ON todo_app.* TO 'upendartodo'@'localhost';
-GRANT ALL PRIVILEGES ON todo_app.* TO 'upendartodo'@'127.0.0.1';
-
--- Grant additional privileges for development
-GRANT CREATE, ALTER, DROP, INDEX ON todo_app.* TO 'upendartodo'@'%';
-GRANT CREATE, ALTER, DROP, INDEX ON todo_app.* TO 'upendartodo'@'localhost';
-GRANT CREATE, ALTER, DROP, INDEX ON todo_app.* TO 'upendartodo'@'127.0.0.1';
+-- Using root user for development setup (simplified configuration)
+-- Root user already has all necessary privileges
 
 -- Flush privileges to apply changes
 FLUSH PRIVILEGES;

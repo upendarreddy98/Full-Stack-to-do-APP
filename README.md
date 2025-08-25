@@ -1,6 +1,6 @@
-# Full-Stack Todo List App
+# Todo App Backend
 
-A modern, full-stack todo list application built with **Next.js**, **Express.js**, **Prisma**, **MySQL**, **TypeScript**, and **Tailwind CSS**.
+Express.js REST API for the Todo List application with TypeScript, Prisma, and MySQL.
 
 ## 🚀 Features
 
@@ -58,6 +58,12 @@ fullstack-todo-app/
 - Node.js 18+
 - Docker Desktop
 - npm
+
+### Platform-Specific Setup Guides
+
+- **macOS**: See [MACOS_SETUP.md](MACOS_SETUP.md) for detailed macOS instructions
+- **Windows**: Follow the standard instructions below
+- **Linux**: Follow the standard instructions with your package manager
 
 ### 1. Clone the Repository
 
